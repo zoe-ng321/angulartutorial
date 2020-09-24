@@ -1,6 +1,7 @@
 <div>
-	<div *ngFor="let newsItem of newsItems; let newsId = index">
-		<h3>{{newsItem.title}}</h3>
+	<input type="text" [(ngModel)]="searchText" placeholder="Search"/>
+	<div *ngFor="let newsItem of (newsItems|newsSearch:searchText); let newsId = index">
+		<h3>{{newsItem.title | uppercase}}</h3>
 		<p [ngClass]="{collapsed:selectedNewsId!=newsId}">{{newsItem.body}}</p>
 		<a href (click)="expandNews(newsId)" *ngIf="selectedNewsId!=newsId">More...</a>
 	</div>
