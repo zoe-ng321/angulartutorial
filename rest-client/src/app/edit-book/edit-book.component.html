@@ -1,15 +1,15 @@
 <h3>Update the Book</h3>
 <div *ngIf="book != undefined">
   <div>
-    <input type="text" [(ngModel)]="book.isbn" placeholder="ISBN" disabled/>
+    <input class="form-control" type="text" [(ngModel)]="book.isbn" placeholder="ISBN" disabled/>
   </div>
   <div>
-    <input type="text" [(ngModel)]="book.title" placeholder="Title"/>
+    <input class="form-control" type="text" [(ngModel)]="book.title" placeholder="Title"/>
   </div>
   <div>
-    <input type="text" [(ngModel)]="book.price" placeholder="Price"/>
+    <input class="form-control" type="text" [(ngModel)]="book.price" placeholder="Price"/>
   </div>
   <div>
-    <button (click)="updateBook()">Save</button>
+    <button class="btn-primary" (click)="updateBook()">Save</button>
   </div>
 </div>

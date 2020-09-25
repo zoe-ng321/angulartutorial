@@ -8,6 +8,8 @@ import { DataService, Book } from '../data.service';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
+  page = 1;
+  pageSize=4;
 
   books: Book[]=[];
 
@@ -31,6 +33,12 @@ export class BookListComponent implements OnInit {
         alert(err)
       }
 
+    )
+  }
+
+  getDisplayList(): Book[]{
+    return this.books.slice(
+      (this.page-1) * this.pageSize, this.page * this.pageSize
     )
   }
 
