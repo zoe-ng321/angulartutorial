@@ -1,0 +1,10 @@
+<p>I'm the Contacts component</p>
+<mat-card>
+  <mat-list>
+    <mat-list-item *ngFor="let contact of contacts; let i = index"
+    (click) = "onContactClick(i)">
+      {{contact.name}}, {{contact.phone}}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
